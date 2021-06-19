@@ -4,7 +4,11 @@ import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Login } from "./Components/Login/Login";
 import { Logout } from "./Components/Logout/Logout";
-function App() {
+import { useScribble } from "./Contexts/notesContext";
+import { addNote } from "./serverRequests/queryMutationRequests";
+
+export default function App() {
+  const { state, dispatch } = useScribble();
   return (
     <div className="App">
       <Navbar />
@@ -13,8 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+
+      <button onClick={() => addNote({ state, dispatch })}>SEND</button>
     </div>
   );
 }
-
-export default App;
