@@ -1,39 +1,39 @@
 import React, { createContext, useContext, useState } from "react";
 
 export type User = {
-   _id: string;
-   name: string;
-   email: string;
-   password: string;
+  _id: string;
+  name: string;
+  email: string;
+  password: string;
 };
 
 export type Auth = {
-   token: string;
-   user: User;
+  token: string;
+  user: User;
 };
 
 export type AuthContextType = {
-   auth: Auth | null;
-   setAuth: (auth: Auth) => void;
+  auth: Auth | null;
+  setAuth: (auth: Auth) => void;
 };
 
 const AuthContext = createContext<AuthContextType>({
-   auth: null,
-   setAuth: (auth) => console.log(auth),
+  auth: null,
+  setAuth: (auth) => console.log(auth),
 });
 
 export const AuthProvider: React.FC = ({ children }) => {
-   const [auth, setAuth] = useState(
-      JSON.parse(localStorage.getItem("auth") || "null")
-   );
+  const [auth, setAuth] = useState(
+    JSON.parse(localStorage.getItem("auth") || "null")
+  );
 
-   return (
-      <AuthContext.Provider value={{ auth, setAuth }}>
-         {children}
-      </AuthContext.Provider>
-   );
+  return (
+    <AuthContext.Provider value={{ auth, setAuth }}>
+      {children}
+    </AuthContext.Provider>
+  );
 };
 
 export function useAuth() {
-   return useContext(AuthContext);
+  return useContext(AuthContext);
 }
