@@ -22,9 +22,100 @@ export const notesReducer = (
 ): initialStateType => {
   switch (action.type) {
     case "ADD_NOTE":
-      break;
+      return {
+        ...state,
+        notes: state.notes.concat(action.payload),
+      };
+    case "DELETE_NOTE":
+      return {
+        ...state,
+        notes: state.notes.filter((note) => note._id !== action.payload),
+      };
+    case "EDIT_NOTE_TEXT":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note._id === action.payload._id
+            ? {
+                ...note,
+                text: action.payload.text,
+              }
+            : note
+        ),
+      };
+    case "TOGGLE_ARCHIVE_NOTE":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note._id === action.payload
+            ? {
+                ...note,
+                archive: !note.archive,
+              }
+            : note
+        ),
+      };
+    case "TOGGLE_TRASH_NOTE":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note._id === action.payload
+            ? {
+                ...note,
+                trash: !note.trash,
+              }
+            : note
+        ),
+      };
+    case "TOGGLE_PIN_NOTE":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note._id === action.payload
+            ? {
+                ...note,
+                pinned: !note.pinned,
+              }
+            : note
+        ),
+      };
+    case "ADD_LABEL":
+      return {
+        ...state,
+        labels: state.labels.concat(action.payload),
+      };
+    case "DELETE_LABEL":
+      return {
+        ...state,
+        labels: state.labels.filter((item) => item._id !== action.payload),
+      };
+    case "EDIT_NOTE_LABEL":
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note._id === action.payload._id
+            ? {
+                ...note,
+                label: action.payload.label,
+              }
+            : note
+        ),
+      };
+    case "EDIT_LABEL":
+      return {
+        ...state,
+        labels: state.labels.map((item) =>
+          item._id === action.payload._id
+            ? {
+                ...item,
+                label: action.payload.label,
+              }
+            : item
+        ),
+      };
 
     default:
       break;
   }
+  return state;
 };
