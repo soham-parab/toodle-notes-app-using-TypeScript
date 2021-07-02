@@ -17,8 +17,6 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-
-      <button onClick={() => addNote({ state, dispatch })}>SEND</button>
     </div>
   );
 }

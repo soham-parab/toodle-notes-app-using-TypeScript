@@ -1,4 +1,4 @@
-import { ACTIONTYPE, notesReducer } from "../reducers/notesReducer";
+import { ACTIONTYPE, notesReducer } from "../Reducers/notesReducer";
 import { labelType, notesType, initialState } from "../Contexts/notesContext";
 import { v4 as uuid } from "uuid";
 const id: string = uuid();
