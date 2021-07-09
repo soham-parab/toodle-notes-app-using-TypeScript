@@ -1,6 +1,15 @@
 import { createContext, useContext, useReducer } from "react";
 import React from "react";
 import { notesReducer, ACTIONTYPE } from "../Reducers/notesReducer";
+import axios from "axios";
+
+const Axios = axios.create({
+  baseURL: process.env.REACT_APP_HASURA_ENDPOINT,
+  headers: {
+    "Content-Type": "application/json",
+    "x-hasura-admin-secret": process.env.REACT_APP_HASURA_SECRET,
+  },
+});
 
 export type notesType = {
   _id: String;
