@@ -3,7 +3,7 @@ import React from "react";
 import { notesReducer, ACTIONTYPE } from "../Reducers/notesReducer";
 import axios from "axios";
 
-const Axios = axios.create({
+export const Axios = axios.create({
   baseURL: process.env.REACT_APP_HASURA_ENDPOINT,
   headers: {
     "Content-Type": "application/json",

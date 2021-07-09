@@ -13,7 +13,7 @@ import { Navbar } from "./Components/Navbar/Navbar";
 import { Login } from "./Components/Login/Login";
 import { Logout } from "./Components/Logout/Logout";
 import { useScribble } from "./Contexts/notesContext";
-import { addNote } from "./serverRequests/queryMutationRequests";
+// import { addNote } from "./serverRequests/queryMutationRequests";
 import { useAuth0 } from "@auth0/auth0-react";
 
 export default function App() {

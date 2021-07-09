@@ -5,6 +5,8 @@ import {
 } from "../Contexts/notesContext";
 
 export type ACTIONTYPE =
+  | { type: "GET_NOTES"; payload: notesType[] }
+  | { type: "GET_LABELS"; payload: labelType[] }
   | { type: "ADD_NOTE"; payload: notesType }
   | { type: "DELETE_NOTE"; payload: String }
   | { type: "TOGGLE_TRASH_NOTE"; payload: String }
@@ -21,6 +23,17 @@ export const notesReducer = (
   action: ACTIONTYPE
 ): initialStateType => {
   switch (action.type) {
+    case "GET_NOTES":
+      return {
+        ...state,
+        notes: action.payload,
+      };
+    case "GET_LABELS":
+      return {
+        ...state,
+        labels: action.payload,
+      };
+
     case "ADD_NOTE":
       return {
         ...state,
