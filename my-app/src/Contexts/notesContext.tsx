@@ -27,7 +27,7 @@ export type labelType = {
 export type initialStateType = {
   notes: notesType[];
   email: String;
-  labels: labelType[];
+  label: labelType[];
 };
 
 const NotesContext = createContext({} as ContextValue);
@@ -39,7 +39,7 @@ export type ContextValue = {
 export const initialState: initialStateType = {
   notes: [],
   email: "",
-  labels: [],
+  label: [],
 };
 
 export const NotesProvider: React.FC = ({ children }) => {
@@ -56,4 +56,4 @@ export const NotesProvider: React.FC = ({ children }) => {
   );
 };
 
-export const useScribble = () => useContext(NotesContext);
+export const useToodle = () => useContext(NotesContext);

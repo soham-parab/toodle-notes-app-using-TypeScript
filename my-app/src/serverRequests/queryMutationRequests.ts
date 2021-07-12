@@ -2,6 +2,7 @@ import axios from "axios";
 import { ContextValue } from "../Contexts/notesContext";
 
 export type queryAddNoteType = {
+  title: String;
   text: String;
   email: String;
   label: String;

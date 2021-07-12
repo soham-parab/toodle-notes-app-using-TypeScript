@@ -1,6 +1,6 @@
 import axios from "axios";
 import React from "react";
-import { ACTIONTYPE } from "../reducers/notesReducer";
+import { ACTIONTYPE } from "../Reducers/notesReducer";
 import { Axios } from "../Contexts/notesContext";
 import { queryAddNoteType, queryAddLabelType } from "./queryMutationRequests";
 import {

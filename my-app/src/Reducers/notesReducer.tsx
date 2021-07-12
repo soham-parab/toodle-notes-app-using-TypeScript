@@ -31,7 +31,7 @@ export const notesReducer = (
     case "GET_LABELS":
       return {
         ...state,
-        labels: action.payload,
+        label: action.payload,
       };
 
     case "ADD_NOTE":
@@ -95,12 +95,12 @@ export const notesReducer = (
     case "ADD_LABEL":
       return {
         ...state,
-        labels: state.labels.concat(action.payload),
+        label: state.label.concat(action.payload),
       };
     case "DELETE_LABEL":
       return {
         ...state,
-        labels: state.labels.filter((item) => item._id !== action.payload),
+        label: state.label.filter((item) => item._id !== action.payload),
       };
     case "EDIT_NOTE_LABEL":
       return {
@@ -117,7 +117,7 @@ export const notesReducer = (
     case "EDIT_LABEL":
       return {
         ...state,
-        labels: state.labels.map((item) =>
+        label: state.label.map((item) =>
           item._id === action.payload._id
             ? {
                 ...item,
