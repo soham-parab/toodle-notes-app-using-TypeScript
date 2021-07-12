@@ -12,6 +12,7 @@ export const Axios = axios.create({
 });
 
 export type notesType = {
+  title: String;
   _id: String;
   text: String;
   pinned: Boolean;

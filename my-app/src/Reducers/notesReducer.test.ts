@@ -6,9 +6,10 @@ const id: string = uuid();
 describe(`testing reducer`, () => {
   test("should add note", () => {
     const note: notesType = {
+      title: "NIL",
       _id: id,
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -24,9 +25,10 @@ describe(`testing reducer`, () => {
 
   test("should delete note", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -48,9 +50,10 @@ describe(`testing reducer`, () => {
 
   test("should edit note", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -72,9 +75,10 @@ describe(`testing reducer`, () => {
 
   test("should toggle trash", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -99,9 +103,10 @@ describe(`testing reducer`, () => {
 
   test("should toggle archive", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -126,9 +131,10 @@ describe(`testing reducer`, () => {
 
   test("should toggle pinned", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -153,9 +159,10 @@ describe(`testing reducer`, () => {
 
   test("Should edit note's label", () => {
     const note: notesType = {
+      title: "NIL",
       _id: "123",
-      text: "sdbfjhdsbvkjb",
-      email: "abc@gmail.com",
+      text: "Test Text",
+      email: "abc@abc.com",
       label: "label",
       pinned: true,
       trash: false,
@@ -189,7 +196,7 @@ describe(`testing reducer`, () => {
       payload: label,
     };
     const state = notesReducer(initialState, action);
-    expect(state.labels[state.labels.length - 1]).toEqual(label);
+    expect(state.label[state.label.length - 1]).toEqual(label);
   });
 
   test("should delete label", () => {
@@ -207,7 +214,7 @@ describe(`testing reducer`, () => {
     };
     const stateOne = notesReducer(initialState, actionOne);
     const stateTwo = notesReducer(stateOne, actionTwo);
-    const filteredLabel = stateTwo.labels.filter((item) => item._id === "123");
+    const filteredLabel = stateTwo.label.filter((item) => item._id === "123");
     expect(filteredLabel.length).toEqual(0);
   });
 
@@ -226,7 +233,7 @@ describe(`testing reducer`, () => {
     };
     const stateOne = notesReducer(initialState, actionOne);
     const stateTwo = notesReducer(stateOne, actionTwo);
-    const filteredState = stateTwo.labels.filter((item) => item._id === "123");
+    const filteredState = stateTwo.label.filter((item) => item._id === "123");
     expect(filteredState[0].label).toEqual("Label is edited");
   });
 });

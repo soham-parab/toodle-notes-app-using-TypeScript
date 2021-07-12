@@ -17,6 +17,7 @@ import { useToodle } from "./Contexts/notesContext";
 import { useAuth0 } from "@auth0/auth0-react";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Editor from "./Components/EditorBox/EditorBox";
+import Note from "./Components/Note/Note";
 
 export default function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -29,13 +30,11 @@ export default function App() {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/note" element={<Note />} />
         <Route
           path="notes"
           element={isAuthenticated ? <Home /> : <Navigate to="/" />}
         />
-
-        <Route path="/new" element={<Editor />} />
-        <Route path="/new" element={<Editor />} />
       </Routes>
     </div>
   );

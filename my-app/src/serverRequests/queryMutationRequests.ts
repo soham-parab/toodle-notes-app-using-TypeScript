@@ -42,7 +42,6 @@ export type queryAddLabelType = {
 //   const res = await Axios.post("", {
 //     query: queryAddNote({ text, email, label, pinned }),
 //   });
-//   console.log(res);
 // };
 
 export const queryGetNotes = `
