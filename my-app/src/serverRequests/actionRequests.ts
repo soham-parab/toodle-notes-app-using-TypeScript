@@ -22,13 +22,15 @@ export const getNotesAndLabels = async (
       JSON.stringify({
         query: queryGetNotes,
         variables: {
-          email: email,
+          "email": email
         },
       })
     );
 
+      console.log(res.data)
     dispatch({ type: "GET_NOTES", payload: res.data.data.notes });
     dispatch({ type: "GET_LABELS", payload: res.data.data.labels });
+    console.log(res);
   } catch (err) {
     console.log(err);
   }
@@ -45,6 +47,7 @@ export const addNote = async (
       variables: { ...payload },
     })
   );
+  console.log(res);
   dispatch({ type: "ADD_NOTE", payload: res.data.data.insert_notes_one });
 };
 

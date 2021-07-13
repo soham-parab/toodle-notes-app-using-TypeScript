@@ -11,17 +11,17 @@ const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <NotesProvider>
-        <Auth0Provider
-          domain={domain!}
-          clientId={clientId!}
-          redirectUri={window.location.origin}
-          useRefreshTokens
-          cacheLocation="localstorage"
-        >
+      <Auth0Provider
+        domain={domain!}
+        clientId={clientId!}
+        redirectUri={window.location.origin}
+        useRefreshTokens
+        cacheLocation="localstorage"
+      >
+        <NotesProvider>
           <App />
-        </Auth0Provider>
-      </NotesProvider>
+        </NotesProvider>
+      </Auth0Provider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

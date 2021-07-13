@@ -54,7 +54,7 @@ query MyQuery($email: String!) {
     archived
     label
   }
-  labels(where: {email: {_eq: $email}}) {
+  label(where: {email: {_eq: $email}}) {
     _id
     label
   }

@@ -19,22 +19,28 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import Editor from "./Components/EditorBox/EditorBox";
 import Note from "./Components/Note/Note";
 
+
 export default function App() {
-  const { isAuthenticated, user } = useAuth0();
-  const { state, dispatch } = useToodle();
+  const { isAuthenticated } = useAuth0();
+  console.log("aksldajsd");
+console.log(isAuthenticated)
   return (
     <div className="App">
       <Navbar />
       <Login />
-      <Logout />
+      {/* <Logout /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/note" element={<Note />} />
+
         <Route
           path="notes"
           element={isAuthenticated ? <Home /> : <Navigate to="/" />}
-        />
+          // element={<Home />}
+        >
+          <Route path="/:noteId" element={<Note />} />
+          <Route path="/new" element={<Editor />} />
+          
+        </Route>
       </Routes>
     </div>
   );

@@ -49,12 +49,14 @@ function Editor() {
           {pinned ? "Unpin" : "Pin"}
         </button>
         {text.length > 11 && (
-          <Icon
-            name="checkmark box"
-            size="large"
-            onClick={createNewNote}
-            // className={styles.submitIcon}
-          />
+          // <Icon
+          //   name="checkmark box"
+          //   size="large"
+          //   onClick={createNewNote}
+          //   // className={styles.submitIcon}
+          // />
+
+          <button onClick={createNewNote}>Save note</button>
         )}
       </div>
 
