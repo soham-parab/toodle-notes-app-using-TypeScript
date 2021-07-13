@@ -18,6 +18,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import Editor from "./Components/EditorBox/EditorBox";
 import Note from "./Components/Note/Note";
+import Grid from "./Components/Grid/Grid";
 
 
 export default function App() {
@@ -35,10 +36,14 @@ console.log(isAuthenticated)
         <Route
           path="notes"
           element={isAuthenticated ? <Home /> : <Navigate to="/" />}
-          // element={<Home />}
+          
         >
           <Route path="/:noteId" element={<Note />} />
           <Route path="/new" element={<Editor />} />
+
+          <Route path="/pinned" element={<Grid />} />
+          <Route path="/archived" element={<Grid />} />
+          <Route path="/label/:labelName" element={<Grid />} />
           
         </Route>
       </Routes>
