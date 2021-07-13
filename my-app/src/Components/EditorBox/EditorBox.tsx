@@ -38,7 +38,7 @@ function Editor() {
           onChange={(e) => setLabel(e.target.value)}
         >
           <option value="">Select Label</option>
-          {state.label.map((item) => (
+          {state.label && state.label.map((item) => (
             <option value={`${item.label}`}>{item.label}</option>
           ))}
         </select>

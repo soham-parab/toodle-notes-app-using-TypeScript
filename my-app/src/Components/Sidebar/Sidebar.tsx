@@ -63,18 +63,19 @@ function Sidebar() {
           </div>
         </NavLink>
         <div className={styles.tagList}>
-          {state.label && state.label.map((item) => (
-            <div className={false ? styles.activeTag : styles.tag}>
-              <BiLabel className={styles.icon} />
-              <NavLink to={`/notes/label/${item.label}`}>
-                <p>{item.label}</p>
-              </NavLink>
-              <RiChatDeleteLine
-                onClick={() => deleteLabel(dispatch, item._id)}
-                style={{ marginLeft: "auto" }}
-              />
-            </div>
-          ))}
+          {state.label &&
+            state.label.map((item) => (
+              <div className={false ? styles.activeTag : styles.tag}>
+                <BiLabel className={styles.icon} />
+                <NavLink to={`/notes/label/${item.label}`}>
+                  <p>{item.label}</p>
+                </NavLink>
+                <RiChatDeleteLine
+                  onClick={() => deleteLabel(dispatch, item._id)}
+                  style={{ marginLeft: "auto" }}
+                />
+              </div>
+            ))}
         </div>
         <div
           className={styles.addTag}

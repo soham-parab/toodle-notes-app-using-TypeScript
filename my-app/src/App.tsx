@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import "./App.module.css";
+import "./global.css"
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Login } from "./Components/Login/Login";
@@ -23,8 +23,7 @@ import Grid from "./Components/Grid/Grid";
 
 export default function App() {
   const { isAuthenticated } = useAuth0();
-  console.log("aksldajsd");
-console.log(isAuthenticated)
+ 
   return (
     <div className="App">
       <Navbar />
