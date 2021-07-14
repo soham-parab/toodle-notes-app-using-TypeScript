@@ -19,14 +19,14 @@ function Sidebar() {
 
   return (
     <div className={styles.sideBar}>
-      <NavLink to="/notes/new">
+      <NavLink className={styles.navlink} to="/notes/new">
         <div className={styles.newNote}>
-          <AiFillFileAdd color={"#1D4ED8"} className={styles.icon} />
+          <AiFillFileAdd className={styles.icon} />
           New Note
         </div>
       </NavLink>
       <div className={styles.sideBarList}>
-        <NavLink to="/notes">
+        <NavLink className={styles.navlink} to="/notes">
           <div
             className={
               path === "/notes"
@@ -38,7 +38,7 @@ function Sidebar() {
             All notes
           </div>
         </NavLink>
-        <NavLink to="/notes/pinned">
+        <NavLink className={styles.navlink} to="/notes/pinned">
           <div
             className={
               path === "/notes/pinned"
@@ -50,7 +50,7 @@ function Sidebar() {
             Pinned notes
           </div>
         </NavLink>
-        <NavLink to="/notes/archived">
+        <NavLink className={styles.navlink} to="/notes/archived">
           <div
             className={
               path === "/notes/archived"
@@ -62,12 +62,23 @@ function Sidebar() {
             Archived notes
           </div>
         </NavLink>
+
+        <div
+          className={styles.addTag}
+          onClick={() => setViewModal((prev) => !prev)}
+        >
+          <MdAddCircle className={styles.iconWhite} />
+          Add new Label
+        </div>
         <div className={styles.tagList}>
           {state.label &&
             state.label.map((item) => (
               <div className={false ? styles.activeTag : styles.tag}>
                 <BiLabel className={styles.icon} />
-                <NavLink to={`/notes/label/${item.label}`}>
+                <NavLink
+                  className={styles.navlink}
+                  to={`/notes/label/${item.label}`}
+                >
                   <p>{item.label}</p>
                 </NavLink>
                 <RiChatDeleteLine
@@ -76,13 +87,6 @@ function Sidebar() {
                 />
               </div>
             ))}
-        </div>
-        <div
-          className={styles.addTag}
-          onClick={() => setViewModal((prev) => !prev)}
-        >
-          <MdAddCircle color={"#1D4ED8"} className={styles.icon} />
-          Add new Label
         </div>
       </div>
       {viewModal && <AddLabelModal setViewModal={setViewModal} />}

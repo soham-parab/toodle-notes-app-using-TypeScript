@@ -1,0 +1,30 @@
+.box {
+  width: 60%;
+  height: 60vh;
+}
+.option {
+  padding: 0.6rem;
+  cursor: pointer;
+  border: 2px solid #1d4ed8;
+  border-radius: 5px;
+}
+
+.boxdiv {
+  width: 100%;
+}
+
+.input {
+  padding: 0.6rem;
+  margin-right: 1rem;
+  border: 2px solid #1d4ed8;
+  border-radius: 5px;
+}
+
+.save {
+  border-radius: 5px;
+  border: none;
+  padding: 0.6rem;
+  background-color: blue;
+  cursor: pointer;
+  color: white;
+}

@@ -6,8 +6,14 @@ export const Navbar = () => {
   const { user } = useAuth0();
   return (
     <div className={style.nav}>
-      <p className={style.para}> {user?.name}</p>
-      <Logout />
+      <div>
+        <p className={style.paraleft}> toodle</p>
+      </div>
+
+      <div className={style.right}>
+        <p className={style.para}> {user?.name}</p>
+        <Logout />
+      </div>
     </div>
   );
 };
