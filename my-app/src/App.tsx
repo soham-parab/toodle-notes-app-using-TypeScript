@@ -7,7 +7,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import "./global.css"
+import "./global.css";
 import { Home } from "./Components/Home/Home";
 import { Navbar } from "./Components/Navbar/Navbar";
 import { Login } from "./Components/Login/Login";
@@ -20,10 +20,9 @@ import Editor from "./Components/EditorBox/EditorBox";
 import Note from "./Components/Note/Note";
 import Grid from "./Components/Grid/Grid";
 
-
 export default function App() {
   const { isAuthenticated } = useAuth0();
- 
+
   return (
     <div className="App">
       <Navbar />
@@ -35,15 +34,14 @@ export default function App() {
         <Route
           path="notes"
           element={isAuthenticated ? <Home /> : <Navigate to="/" />}
-          
         >
+          <Route path="/" element={<Grid />} />
           <Route path="/:noteId" element={<Note />} />
           <Route path="/new" element={<Editor />} />
 
           <Route path="/pinned" element={<Grid />} />
           <Route path="/archived" element={<Grid />} />
           <Route path="/label/:labelName" element={<Grid />} />
-          
         </Route>
       </Routes>
     </div>

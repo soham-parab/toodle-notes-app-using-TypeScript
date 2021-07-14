@@ -26,7 +26,7 @@ function Grid() {
         );
     }
   })();
-  console.log(state.notes);
+  console.log(state.notes, "notessssss");
 
   return (
     <div>
@@ -36,19 +36,21 @@ function Grid() {
         )}
       </div>
       <div className={styles.homeGrid}>
-        {renderNotes && renderNotes.map((note) => (
-          <div className={styles.noteBox}>
-            <RiDeleteBack2Fill
-              color={"#000"}
-              style={{ marginLeft: "auto" }}
-              onClick={() => deleteNote(dispatch, note._id)}
-            />
-            <NavLink to={`/notes/${note._id}`}>
-              <h1>{note.title}</h1>
-            </NavLink>
-            <p>{note.label}</p>
-          </div>
-        ))}
+        {renderNotes &&
+          renderNotes.map((note) => (
+            <div className={styles.noteBox}>
+              <RiDeleteBack2Fill
+                color={"#000"}
+                style={{ marginLeft: "auto" }}
+                onClick={() => deleteNote(dispatch, note._id)}
+              />
+
+              <NavLink to={`/notes/${note._id}`}>
+                <h1>{note.title}</h1>
+              </NavLink>
+              <p>{note.label}</p>
+            </div>
+          ))}
       </div>
     </div>
   );

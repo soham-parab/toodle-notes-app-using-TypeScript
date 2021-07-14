@@ -22,12 +22,12 @@ export const getNotesAndLabels = async (
       JSON.stringify({
         query: queryGetNotes,
         variables: {
-          "email": email
+          email: email,
         },
       })
     );
 
-      console.log(res.data)
+    console.log(res.data.data.notes);
     dispatch({ type: "GET_NOTES", payload: res.data.data.notes });
     dispatch({ type: "GET_LABELS", payload: res.data.data.labels });
     console.log(res);
