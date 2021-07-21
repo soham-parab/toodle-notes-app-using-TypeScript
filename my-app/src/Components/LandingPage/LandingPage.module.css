@@ -35,3 +35,13 @@
   border: none;
   cursor: pointer;
 }
+
+.login {
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}

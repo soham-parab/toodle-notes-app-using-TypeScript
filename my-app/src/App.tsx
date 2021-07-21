@@ -26,8 +26,6 @@ export default function App() {
   return (
     <div className="App">
       <Navbar />
-      <Login />
-      {/* <Logout /> */}
       <Routes>
         <Route path="/" element={<LandingPage />} />
 
@@ -38,7 +36,6 @@ export default function App() {
           <Route path="/" element={<Grid />} />
           <Route path="/:noteId" element={<Note />} />
           <Route path="/new" element={<Editor />} />
-
           <Route path="/pinned" element={<Grid />} />
           <Route path="/archived" element={<Grid />} />
           <Route path="/label/:labelName" element={<Grid />} />

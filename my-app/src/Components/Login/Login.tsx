@@ -1,12 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import style from "../../Components/LandingPage/LandingPage.module.css";
 
 export const Login = () => {
-  const { loginWithRedirect, isAuthenticated,} = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   return (
-    <>     
+    <>
       {!isAuthenticated && (
-        <button onClick={() => loginWithRedirect()}>Log In</button>
+        <button className={style.login} onClick={() => loginWithRedirect()}>
+          Log In
+        </button>
       )}
     </>
   );
