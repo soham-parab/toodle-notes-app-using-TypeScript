@@ -1,0 +1,47 @@
+.header {
+  color: #315cfd;
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.div {
+  height: 93vh;
+  background-color: #eff6ff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.smallHeader {
+  color: #1d4ed8;
+  padding: 1rem;
+}
+
+.link {
+  text-decoration: none;
+  padding: 1rem;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 5px;
+}
+
+.logout {
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.login {
+  padding: 0.5rem;
+  margin: 1rem;
+  background-color: #1d4ed8;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}

@@ -1,0 +1,25 @@
+.nav {
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.para {
+  margin-right: 1rem;
+  font-weight: 600;
+
+  color: #1d4ed8;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
+
+.paraleft {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1d4ed8;
+}

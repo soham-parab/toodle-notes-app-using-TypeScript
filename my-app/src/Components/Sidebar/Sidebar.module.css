@@ -1,0 +1,45 @@
+.sideBar {
+  width: 15%;
+  padding: 1rem;
+
+  text-decoration: none;
+}
+
+.sideBarList div {
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #1d4ed8;
+  width: 70%;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  text-align: center;
+}
+
+.navlink {
+  text-decoration: none;
+}
+
+.newNote {
+  padding: 1rem;
+  background-color: #1d4ed8;
+  width: 70%;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.newNote:hover {
+  background-color: #0c3cc0;
+}
+.sideBarList div:hover {
+  background-color: #0c3cc0;
+}
+.addTag {
+  padding: 0.5rem;
+  color: white;
+}
